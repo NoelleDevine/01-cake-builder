@@ -1,0 +1,12 @@
+.LayerForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #d9d9d9;
+  padding: 15px;
+}
+
+.colorSelection .widthSelection .heightSelection .buttonSelection {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
