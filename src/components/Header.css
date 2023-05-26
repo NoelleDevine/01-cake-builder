@@ -1,0 +1,25 @@
+body,
+h1,
+h2 {
+  margin: 0;
+}
+
+.Header {
+  font-family: "Indie Flower", cursive;
+  color: #f9423a;
+
+  text-align: center;
+  font-size: medium;
+}
+
+h1,
+h2 {
+  background-color: #d9d9d9;
+}
+h2 {
+  color: #9e9393;
+  font-size: small;
+}
+img {
+  height: 100px;
+}
