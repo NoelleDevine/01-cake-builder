@@ -6,19 +6,12 @@ interface Props {
 }
 
 const CakeLayer = ({ propLayer }: Props) => {
-  console.log("testing 123");
-
   return (
     <div className="CakeLayer">
-      <p>
-        Testing:
-        {propLayer.height} {propLayer.width}
-      </p>
-
       <div
         style={{
-          width: propLayer.width + "px",
-          height: propLayer.height + "px",
+          width: propLayer.width * 10 + "px",
+          height: propLayer.height * 10 + "px",
           backgroundColor: propLayer.color,
           border: "2px solid black",
         }}

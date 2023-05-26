@@ -1,13 +1,32 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import "./LayerForm.css";
+import Layer from "../models/Layer";
 
-const LayerForm = () => {
+interface Props {
+  addALayer: (newLayer: Layer) => void;
+  closeForm: () => void;
+}
+
+const LayerForm = ({ addALayer, closeForm }: Props) => {
   const [height, setHeight] = useState("0");
   const [width, setWidth] = useState("0");
-  const [color, setColor] = useState("teelblue");
+  const [color, setColor] = useState("steelblue");
+  const [save, setSave] = useState(false);
+
+  const submitHandler = (e: FormEvent): void => {
+    e.preventDefault();
+    const newLayer: Layer = {
+      height: +height,
+      width: +width,
+      color: color,
+    };
+    if (save) {
+      addALayer(newLayer);
+    }
+  };
 
   return (
-    <form className="LayerForm">
+    <form onSubmit={submitHandler} className="LayerForm">
       <h2>Add A Layer</h2>
       <section className="colorSelection">
         <label htmlFor="color">Color:</label>
@@ -18,9 +37,9 @@ const LayerForm = () => {
           onChange={(e) => setColor(e.target.value)}
         >
           <option value="saddlebrown">Brown</option>
-          <option value="Pink">Pink</option>
+          <option value="pink">Pink</option>
           <option value="blueviolet">Purple</option>
-          <option value="teelblue">Teal Blue</option>
+          <option value="steelblue">Teal Blue</option>
           <option value="darkturquoise">Turquoise</option>
         </select>
       </section>
@@ -55,8 +74,16 @@ const LayerForm = () => {
         ></input>
       </section>
       <section className="buttonSelection">
-        <button style={{ width: 75 + "px" }}>Save</button>
-        <button style={{ width: 75 + "px" }}>Cancel</button>
+        <button
+          onClick={(e) => setSave(true)}
+          className="saveBtn"
+          style={{ width: 75 + "px" }}
+        >
+          Save
+        </button>
+        <button onClick={closeForm} style={{ width: 75 + "px" }}>
+          Cancel
+        </button>
       </section>
     </form>
   );

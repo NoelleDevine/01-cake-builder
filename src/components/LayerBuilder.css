@@ -1,0 +1,12 @@
+.colorSelection {
+  display: flex;
+}
+
+.sizeSelection {
+  display: flex;
+  flex-direction: column;
+}
+
+.LayerBuilder {
+  display: flex;
+}
