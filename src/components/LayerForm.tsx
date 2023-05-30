@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import "./LayerForm.css";
 import Layer from "../models/Layer";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   addALayer: (newLayer: Layer) => void;
@@ -8,10 +9,11 @@ interface Props {
 }
 
 const LayerForm = ({ addALayer, closeForm }: Props) => {
-  const [height, setHeight] = useState("0");
-  const [width, setWidth] = useState("0");
+  const [height, setHeight] = useState("1");
+  const [width, setWidth] = useState("1");
   const [color, setColor] = useState("steelblue");
   const [save, setSave] = useState(false);
+  const [pattern, setPattern] = useState("None");
 
   const submitHandler = (e: FormEvent): void => {
     e.preventDefault();
@@ -19,6 +21,8 @@ const LayerForm = ({ addALayer, closeForm }: Props) => {
       height: +height,
       width: +width,
       color: color,
+      pattern: pattern,
+      id: uuidv4(), //add id to object when layer is made, not upon render
     };
     if (save) {
       addALayer(newLayer);
@@ -27,7 +31,7 @@ const LayerForm = ({ addALayer, closeForm }: Props) => {
 
   return (
     <form onSubmit={submitHandler} className="LayerForm">
-      <h2>Add A Layer</h2>
+      <h2 className="addLayerHeading">Add A Layer</h2>
       <section className="colorSelection">
         <label htmlFor="color">Color:</label>
         <select
@@ -43,6 +47,19 @@ const LayerForm = ({ addALayer, closeForm }: Props) => {
           <option value="darkturquoise">Turquoise</option>
         </select>
       </section>
+      <section className="patternSelection">
+        <label htmlFor="pattern">Pattern:</label>
+        <select
+          name="pattern"
+          id="pattern"
+          value={pattern}
+          onChange={(e) => setPattern(e.target.value)}
+        >
+          <option value="None">None</option>
+          <option value="Bone">Bones</option>
+          <option value="pawPrints">Paw Prints</option>
+        </select>
+      </section>
       <section className="widthSelection">
         <label htmlFor="width">Width: </label>
         {width}
@@ -51,9 +68,9 @@ const LayerForm = ({ addALayer, closeForm }: Props) => {
           type="range"
           id="width"
           name="width"
-          min="0"
-          max="50"
-          step="5"
+          min="1"
+          max="30"
+          step="1"
           value={width}
           onChange={(e) => setWidth(e.target.value)}
         ></input>
@@ -66,7 +83,7 @@ const LayerForm = ({ addALayer, closeForm }: Props) => {
           type="range"
           id="height"
           name="height"
-          min="0"
+          min="1"
           max="10"
           step="1"
           value={height}

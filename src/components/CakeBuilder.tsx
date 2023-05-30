@@ -17,7 +17,7 @@ const CakeBuilder = ({ addALayer, layersMade, deleteLayer }: Props) => {
           <LayerBuilder
             layerMade={item}
             i={index}
-            key={index + Math.random()} //this is specific to react, not the index
+            key={item.id} //this is specific to react, not the index
             deleteLayer={deleteLayer}
           />
         ))}

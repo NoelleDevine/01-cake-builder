@@ -1,5 +1,6 @@
-.colorSelection {
+.colorMadeSelection {
   display: flex;
+  margin-left: 15px;
 }
 
 .sizeSelection {
@@ -9,4 +10,20 @@
 
 .LayerBuilder {
   display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.colorDiv {
+  margin: 5px;
+}
+
+.delButton {
+  margin-left: 5px;
+  margin-top: 0px;
+}
+
+#madeWidth,
+#madeHeight {
+  accent-color: #29b7ca;
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Header.css";
-import LayerAdd from "./LayerAdd";
+import dog from "../images/dogEatingCake.jpg";
+import arrow from "../images/arrow.gif";
 
 const Header = () => {
   return (
@@ -9,9 +10,9 @@ const Header = () => {
         Welcome To <br></br>The Barking Baker
       </h1>
       <h2>Your Dog Wants a Cake</h2>
-      <img src="./images/dogEatingCake.jpg" alt="" />
+      <img className="dogPic" src={dog}></img>
       <h3>Start your cake today!</h3>
-      <img src="./images/arrow.gif" alt="" />
+      <img src={arrow} alt="arrow"></img>
     </header>
   );
 };

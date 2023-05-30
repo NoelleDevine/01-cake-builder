@@ -1,0 +1,11 @@
+.fullCakeLayers {
+  padding: 0;
+  margin: 30px 20px 0px 20px;
+}
+
+.allLayers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

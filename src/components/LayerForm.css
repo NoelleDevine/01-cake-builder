@@ -3,10 +3,24 @@
   flex-direction: column;
   background-color: #d9d9d9;
   padding: 15px;
+  margin-top: 50px;
 }
 
 .colorSelection .widthSelection .heightSelection .buttonSelection {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
+}
+
+.addLayerHeading {
+  font-family: "Indie Flower", cursive;
+  color: #f9423a;
+  padding-bottom: 5px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+#width,
+#height {
+  accent-color: #29b7ca;
 }

@@ -1,0 +1,54 @@
+.cakeStand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.picOfStand {
+  width: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+  /*apply desktop view*/
+  .allLayers {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+    width: 75%;
+  }
+
+  .cakeBuilder {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 25%;
+  }
+
+  .changeView {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .cakeStand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 75%;
+  }
+
+  .picOfStand {
+    width: 300px;
+  }
+
+  /* .CakeLayer {
+    display: flex;
+    justify-content: center;
+  } */
+}

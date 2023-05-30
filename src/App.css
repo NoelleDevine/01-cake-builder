@@ -1,0 +1,11 @@
+@media only screen and (min-width: 768px) {
+  /*apply desktop view*/
+  .App {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .LayerForm {
+    border: 2px solid black;
+  }
+}
