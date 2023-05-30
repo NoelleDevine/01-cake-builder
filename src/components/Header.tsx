@@ -1,4 +1,6 @@
+import { useState } from "react";
 import "./Header.css";
+import LayerAdd from "./LayerAdd";
 
 const Header = () => {
   return (
