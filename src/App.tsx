@@ -36,6 +36,7 @@ function App() {
         addALayer={addALayer}
         layersMade={arrayOfLayers}
         deleteLayer={deleteLayer}
+        clearCake={() => setLayers([])}
       />
     </div>
   );

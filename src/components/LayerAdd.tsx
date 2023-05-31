@@ -6,19 +6,20 @@ import Header from "./Header";
 
 interface Props {
   addALayer: (newLayer: Layer) => void;
+  clearCake: () => void;
 }
 
-const LayerAdd = ({ addALayer }: Props) => {
+const LayerAdd = ({ addALayer, clearCake }: Props) => {
   const [show, setShow] = useState(false);
+  const closeForm = (): void => {
+    setShow(false);
+    //clear cake
+    clearCake();
+  };
   return (
     <div className="LayerAdd">
       {show ? (
-        <LayerForm
-          closeForm={() => {
-            setShow(false);
-          }}
-          addALayer={addALayer}
-        />
+        <LayerForm closeForm={closeForm} addALayer={addALayer} />
       ) : (
         <div className="changeView">
           <Header />

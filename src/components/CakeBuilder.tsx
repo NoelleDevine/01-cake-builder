@@ -7,11 +7,17 @@ interface Props {
   addALayer: (newLayer: Layer) => void;
   layersMade: Layer[];
   deleteLayer: (theIndex: number) => void;
+  clearCake: () => void;
 }
-const CakeBuilder = ({ addALayer, layersMade, deleteLayer }: Props) => {
+const CakeBuilder = ({
+  addALayer,
+  layersMade,
+  deleteLayer,
+  clearCake,
+}: Props) => {
   return (
     <div className="CakeBuilder">
-      <LayerAdd addALayer={addALayer} />
+      <LayerAdd addALayer={addALayer} clearCake={clearCake} />
       <ul className="layersMade">
         {layersMade.map((item, index) => (
           <LayerBuilder
