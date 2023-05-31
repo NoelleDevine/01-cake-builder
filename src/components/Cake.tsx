@@ -1,6 +1,7 @@
 import Layer from "../models/Layer";
 import "./Cake.css";
 import CakeLayer from "./CakeLayer";
+import cakeStand from "../images/cakeStand.png";
 
 interface Props {
   propLayers: Layer[]; //child is receiving the array
@@ -13,9 +14,13 @@ const Cake = ({ propLayers }: Props) => {
         {propLayers.map((item, index) => (
           <CakeLayer
             propLayer={item}
-            key={index + Math.random()} //this is specific to react, not the index
+            key={item.id} //this is specific to react, not the index
           />
         ))}
+
+        {propLayers.length > 0 && (
+          <img className="picOfStand" src={cakeStand}></img>
+        )}
       </ul>
     </div>
   );

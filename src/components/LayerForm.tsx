@@ -98,7 +98,7 @@ const LayerForm = ({ addALayer, closeForm }: Props) => {
         >
           Save
         </button>
-        <button onClick={closeForm} style={{ width: 75 + "px" }}>
+        <button type="button" onClick={closeForm} style={{ width: 75 + "px" }}>
           Cancel
         </button>
       </section>
